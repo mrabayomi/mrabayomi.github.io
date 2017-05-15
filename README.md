@@ -24,7 +24,7 @@ Also:
 
 ## Deployment
 
-[View live demo of the projects here](http://mrabayomi.github.io/projects/)
+[View live demo of the projects here](http://mrabayomi.github.io/)
 
 
 ## Authors
