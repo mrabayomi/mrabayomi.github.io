@@ -1,0 +1,87 @@
+body{
+	background-color: #232323;
+	margin: 0;
+	font-family: "Montserrat","Avenir";
+}
+
+h1{
+	text-align: center;
+	line-height: 1.1;
+	color: white;
+	background: steelblue;
+	margin: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding: 20px 0;
+	transition: background 0.3s;
+}
+
+button{
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all 0.3s;
+	/*For transition to work on different broswers, include webkit for safari and moz for firefox, support*/
+	-webkit-transition: background 0.5s;
+	-moz-transition: background 0.5s;
+	/*To take off browser outline around buttons*/
+	outline: none;
+}
+
+button:hover{
+	background: steelblue;
+	color: white;
+}
+
+div p{
+	position: fixed;
+	bottom: 0;
+	color:white;
+	font-size: 20px;
+	margin: 2%;
+}
+
+#message{
+	display: inline-block;
+	/*takes up 20% of this screen, in-line*/
+	width: 20%;
+}
+
+#colorDisplay{
+	font-size: 200%;
+}
+
+.selected{
+	background: steelblue;
+	color: white;
+}
+
+#stripe{
+	background: white;
+	height: 30px;
+	text-align: center;
+	color: black;
+}
+.square{
+	width: 30%;
+	background: purple;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.66%;
+	border-radius: 15%;
+	transition: background 0.5s;
+	/*For transition to work on different broswers, include webkit for safari and moz for firefox, support*/
+	-webkit-transition: background 0.5s;
+	-moz-transition: background 0.5s;
+}
+
+#container{
+	margin: 20px auto;
+	max-width: 600px;
+}
+
