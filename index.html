@@ -1,26 +1,307 @@
-
 <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js" charset="utf-8"></script>
+  <!-- Site Properties -->
+  <title>Abayomi Moses</title>
+  <link rel="stylesheet" type = "text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.8/semantic.min.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+      .hidden.menu {
+        display: none;
+      }
+
+      .masthead.segment {
+        min-height: 700px;
+        padding: 1em 0em;
+      }
+      .masthead .logo.item img {
+        margin-right: 1em;
+      }
+      .masthead .ui.menu .ui.button {
+        margin-left: 0.5em;
+      }
+      .masthead h1.ui.header {
+        margin-top: 3em;
+        margin-bottom: 0em;
+        font-size: 4em;
+        font-weight: normal;
+      }
+      .masthead h2 {
+        font-size: 1.7em;
+        font-weight: normal;
+      }
+
+      .title{
+        font-size: 1.4em;
+        font-weight: bold;
+        color: rgb(0,30,20);
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .ui.vertical.stripe {
+        padding: 8em 0em;
+      }
+      .ui.vertical.stripe h3 {
+        font-size: 2em;
+      }
+      .ui.vertical.stripe .button + h3,
+      .ui.vertical.stripe p + h3 {
+        margin-top: 3em;
+      }
+      .ui.vertical.stripe .floated.image {
+        clear: both;
+      }
+      .ui.vertical.stripe p {
+        font-size: 1.33em;
+      }
+      .ui.vertical.stripe .horizontal.divider {
+        margin: 3em 0em;
+      }
+
+      #button{
+        font-size: 5em;
+        color: white;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .quote.stripe.segment {
+        padding: 0em;
+      }
+      .quote.stripe.segment .grid .column {
+        padding-top: 5em;
+        padding-bottom: 5em;
+      }
+
+      .footer.segment {
+        padding: 5em 0em;
+      }
+
+      .secondary.pointing.menu .toc.item {
+        display: none;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .ui.fixed.menu {
+          display: none !important;
+        }
+        .secondary.pointing.menu .item,
+        .secondary.pointing.menu .menu {
+          display: none;
+        }
+        .secondary.pointing.menu .toc.item {
+          display: block;
+        }
+        .masthead.segment {
+          min-height: 350px;
+        }
+        .masthead h1.ui.header {
+          font-size: 2em;
+          margin-top: 1.5em;
+        }
+        .masthead h2 {
+          margin-top: 0.5em;
+          font-size: 1.5em;
+        }
+      }
+    </style>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  
+  <script>
+  $(document)
+    .ready(function() {
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        });
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item');
+    });
+  </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Page Content goes here -->
-         <div class="collection">
-            <a class="collection-header"><h4>Projects by Abayomi</h4></a>
-            <a href="color_game/colorgame.html" class="collection-item"><strong>Color Game</strong> - A color game which can be ran in the browser. testing a user's RGB colours. Set to have an easy and difficult mode.</a>
-            <a href="image_gallery/gallery.html" class="collection-item"><strong>Image Gallery</strong> - A nice and professional Image Gallery builty using HTML and CSS.</a>
-            <a href="purrfect_match/index.html" class="collection-item"><strong>Purrfect Match</strong> - Start-Up page, showing the basics using purely HTML, CSS and JQuery</a>
-            <a href="https://polar-escarpment-10572.herokuapp.com/" class="collection-item"><strong>Campground-Application</strong> - A Full Stack application using a range of technologies, including NodeJS, Express, MongoDB, Mongoose, PassportJS, Bootstrap. Allows users to fully view and log in to the application to see, comment and view on campgrounds on the website. Also allowing them to destroy the ones which they have created, using RESTful Routing and data associations.</a>
-            <a href="#" class="collection-item"><strong>Blog Application</strong> - A full blog application built using NodeJS, Express, MongoDB, Mongoose and SemanticUI. RESTful routing was incorporated to the application where all seven routes were employed.</a>
-            <a href="todo/index.html" class="collection-item"><strong>ToDo-List-App</strong> - An application, with real time changes. A user is able to add different tasks to the list, delete them and also hide them.</a>
-        </div>
-        
-        <p>GitHub Repository: <a href="https://github.com/mrabayomi">https://github.com/mrabayomi</a></p>
+    
+<script>
+    function jump(h){
+    var top = document.getElementById(h).offsetTop; //Getting Y of target element
+    window.scrollTo(0, top);                        //Go there directly or some transition
+    }
+</script>
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a onclick="jump('home')" class="active item">HOME</a>
+    <a onclick="jump('about')" class="item">ABOUT</a>
+    <a onclick="jump('projects')" class="item">PROJECTS</a>
+    <a onclick="jump('skills')" class="item">SKILLS</a>
+  </div>
+</div>
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div id = "home" class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a onclick="jump('home')" class="active item">HOME</a>
+        <a onclick="jump('about')" class="item">ABOUT</a>
+        <a onclick="jump('projects')" class="item">PROJECTS</a>
+        <a onclick="jump('skills')" class="item">SKILLS</a>
+      </div>
     </div>
+
+  <div class="ui vertical inverted sidebar menu">
+      <a onclick="jump('home')" class="active item">HOME</a>
+      <a onclick="jump('about')" class="item">ABOUT</a>
+      <a onclick="jump('projects')" class="item">PROJECTS</a>
+      <a onclick="jump('skills')" class="item">SKILLS</a>
+  </div>
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">Mr Abayomi</h1>
+      <h2>Software Engineer <span>|</span> Consultant <span>|</span> Innovator</h2>
+      <a href="https://github.com/mrabayomi"><i id="button" class="github icon"></i></a>
+    </div>
+  </div>
+
+  <div id = "about" class="ui vertical stripe segment">
+    <h2 class="ui center aligned header">ABOUT ME</h2>
+    <div class="ui container">
+        <div class="ui text container">
+          <p>Abayomi has recently completed the Stanford Ignite program run by the Stanford Graduate School of Business. His first degree was in Electronic Engineering where he employed his knowledge to create a prototype boxing system which was in early talks of patency. His second degree(MSc) was in Environmental Economics and energy at Imperial College London where he conducted research on the Nigerian energy sector liasing with CEOs and key decision makers.  He has dabbled in finance at Barclay's headquarters in Canary Wharf and was a participant in Entrepreneur First, Europe's largest and most successful tech incubator. Currently he is consulting and working at Beacon Oak, an energy advisory firm.</p>
+        </div>
+      </div>
+  </div>
+
+  <div id = "projects" class="ui vertical stripe segment">
+    <div class="ui container">
+        <h2 class="ui center aligned header">PROJECTS</h2> 
+        <div class="ui list">
+          <div class="item">
+            <div class="content">
+        <table class="ui black table">
+          <thead>
+            <tr><th class="title">Applications</th>
+            <th class="title">Description</th>
+          </tr></thead><tbody>
+            <tr>
+              <td><a class="title" href="color_game/colorgame.html">Color Game</a></td>
+              <td><p>A color game which can be ran in the browser. testing a user's RGB colours. Set to have an easy and difficult mode.</p></td>
+            </tr>
+            <tr>
+              <td><a class="title" href="image_gallery/gallery.html">Image Gallery</a></td>
+              <td><p>A nice and professional Image Gallery built using HTML and CSS.</p></td>
+            </tr>
+            <tr>
+              <td><a class="title" href="purrfect_match/index.html">Purrfect Match</a></td>
+              <td><p>Start-Up page, showing the basics using purely HTML, CSS and JQuery</p></td>
+            </tr>
+            <tr>
+              <td><a class="title" href="https://polar-escarpment-10572.herokuapp.com/">Campground Application</a></td>
+              <td><p>A Full Stack application using a range of technologies, including NodeJS, Express, MongoDB, Mongoose, PassportJS, Bootstrap. Allows users to fully view and log in to the application to see, comment and view on campgrounds on the website. Also allowing them to destroy the ones which they have created, using RESTful Routing and data associations.</p></td>
+            </tr>
+            <tr>
+              <td><a class="title" href="#">Blog Application</a></td>
+              <td><p>A full blog application built using NodeJS, Express, MongoDB, Mongoose and SemanticUI. RESTful routing was incorporated to the application where all seven routes were employed.</p></td>
+            </tr>
+            <tr>
+              <td><a class="title" href="todo/index.html">ToDo-List-App</a></td>
+              <td><p>An application, with real time changes. A user is able to add different tasks to the list, delete them and also hide them.</p></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <div id = "skills" class="ui vertical stripe segment">
+  <div class="ui text container">
+  <h2 class="ui center aligned header">SKILLS</h2>
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <!-- Skills -->
+        <div class= "column">
+             <!-- Table -->
+            <table class="ui inverted table">
+                <tbody class="center aligned" >
+                    <tr>
+                        <td>HTML5 </td>
+                        <td>CSS3 </td>
+                        <td>JavaScript </td>
+                        <td>React </td>
+                        <td>Redux </td>
+                    </tr>
+                    <tr>
+                        <td>ES6 </td>
+                        <td>Node.js </td>
+                        <td>Express </td>
+                        <td>MongoDB </td>
+                        <td>Mongoose </td>
+                     </tr>
+                     <tr>   
+                      <td>Bootstrap</td>
+                      <td>Semantic UI</td>
+                      <td>jQuery </td>
+                      <td>Webpack</td>
+                      <td>APIs </td>
+                     </tr>
+                     <tr> 
+                      <td>C </td>
+                      <td>Java </td>
+                      <td>DOM </td>
+                      <td>RESTful frameworks </td>
+                      <td>OOJS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+      </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <footer>
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="three wide column">
+              <div class="copyright">
+                  <p class="ui inverted aligned header">&copy; 2017 Abayomi Epega</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
 </body>
+
+</html>
+  
+
